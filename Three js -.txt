@@ -1,0 +1,10 @@
+Three js - 
+
+creating a new project - 
+1) npm create vite@latest
+
+installing packages 
+2) npm i three gsap
+
+running the project
+3) npm run dev
