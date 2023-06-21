@@ -20,9 +20,26 @@ const cursor = {
 window.addEventListener("mousemove",(event) =>{
   cursor.x = event.clientX/window.innerWidth -0.5;
   cursor.y = event.clientY/window.innerHeight -0.5; //here we are subtarcting the 0.5 from x & y to make it look also into the negative direction
-  console.log(cursor.x,cursor.y);
+  // console.log(cursor.x,cursor.y);
 })
 
+
+//Resizing 
+window.addEventListener("resize",()=>{
+ 
+  //New Size
+  aspect.width = window.innerWidth;
+  aspect.height = window.innerHeight;
+
+  //new AspectRatio
+  camera.aspect = aspect.width/aspect.height;
+  camera.updateProjectionMatrix()
+
+  //new Renderer
+  renderer.setSize(aspect.width,aspect.height)
+  
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
+})
 
 
 //Camera
